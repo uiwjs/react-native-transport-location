@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
+import com.facebook.react.bridge.JavaOnlyArray;
+import com.facebook.react.bridge.JavaOnlyMap;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -106,9 +108,14 @@ public class RNTransportLocationModule extends ReactContextBaseJavaModule {
      * 启用服务。context 必须为 activity。
      */
     @ReactMethod
-    public void start(ReadableArray readableArray, final Promise promise) {
-
-        LocationOpenApi.start(this.context, convert(readableArray), new OnResultListener() {
+    public void start(String shippingNoteNumber,String serialNumber,String startCountrySubdivisionCode,String endCountrySubdivisionCode, final Promise promise) {
+        JavaOnlyMap param = new JavaOnlyMap();
+        param.putString("shippingNoteNumber", shippingNoteNumber);
+        param.putString("serialNumber", serialNumber);
+        param.putString("startCountrySubdivisionCode",startCountrySubdivisionCode);
+        param.putString("endCountrySubdivisionCode", endCountrySubdivisionCode);
+        JavaOnlyArray javaOnlyArray = JavaOnlyArray.of(param);
+        LocationOpenApi.start(this.context, convert(javaOnlyArray), new OnResultListener() {
             @Override
             public void onSuccess() {
                 promise.resolve("success");
@@ -124,8 +131,14 @@ public class RNTransportLocationModule extends ReactContextBaseJavaModule {
      * 停止服务。context 必须为 activity。
      */
     @ReactMethod
-    public void stop(ReadableArray readableArray, final Promise promise) {
-        LocationOpenApi.stop(this.context, convert(readableArray), new OnResultListener() {
+    public void stop(String shippingNoteNumber,String serialNumber,String startCountrySubdivisionCode,String endCountrySubdivisionCode, final Promise promise) {
+        JavaOnlyMap param = new JavaOnlyMap();
+        param.putString("shippingNoteNumber", shippingNoteNumber);
+        param.putString("serialNumber", serialNumber);
+        param.putString("startCountrySubdivisionCode",startCountrySubdivisionCode);
+        param.putString("endCountrySubdivisionCode", endCountrySubdivisionCode);
+        JavaOnlyArray javaOnlyArray = JavaOnlyArray.of(param);
+        LocationOpenApi.stop(this.context, convert(javaOnlyArray), new OnResultListener() {
             @Override
             public void onSuccess() {
                 promise.resolve("success");

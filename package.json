@@ -1,0 +1,38 @@
+{
+  "name": "@uiw/react-native-transport-location",
+  "version": "1.0.0",
+  "description": "部网络货运信息交互系统位置信息上报",
+  "main": "index.js",
+  "files": [
+    "android/libs",
+    "android/src",
+    "android/build.gradle",
+    "ios",
+    "index.d.ts",
+    "index.js",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uiwjs/@uiw/react-native-transport-location.git",
+    "baseUrl": "https://github.com/uiwjs/@uiw/react-native-transport-location"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": {
+    "name": "Kenny Wong",
+    "email": "wowohoo@qq.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": ">=0.60.0-rc.0 <1.0.x"
+  },
+  "devDependencies": {
+    "react": "^16.9.0",
+    "react-native": "^0.61.5"
+  }
+}

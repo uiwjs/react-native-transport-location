@@ -40,5 +40,5 @@ cd example   # 进入实例 example 工程，根目录不需要安装，会引�
 yarn install # 安装依赖
 
 cd ios     # 进入 example/ios 目录安装依赖
-pod instll # 安装依赖
+pod install # 安装依赖
 ```

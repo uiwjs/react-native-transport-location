@@ -10,22 +10,23 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import RNTransportLocation from '@uiw/react-native-transport-location';
+// import RNTransportLocation from '@uiw/react-native-transport-location';
 
-export default class App extends Component<{}> {
+export default class App extends Component {
   state = {
     status: 'starting',
     message: '--'
   };
   componentDidMount() {
-    RNTransportLocation.sampleMethod('Testing', 123, (message) => {
-      this.setState({
-        status: 'native callback received',
-        message
-      });
-    });
+    // RNTransportLocation.init('Testing', 123, (message) => {
+    //   this.setState({
+    //     status: 'native callback received',
+    //     message
+    //   });
+    // });
   }
   render() {
+    console.log('~~~~:::')
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>☆RNTransportLocation example☆</Text>

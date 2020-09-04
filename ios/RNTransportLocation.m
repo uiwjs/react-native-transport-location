@@ -1,4 +1,5 @@
 #import "RNTransportLocation.h"
+#import <MapManager/MapManager.h>
 
 @implementation RNTransportLocation
 

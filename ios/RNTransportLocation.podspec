@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
 
   s.dependency "React"
   s.dependency "MapManager"
+  s.library = "c++", "z"
   # ...
   # s.dependency "..."
 end

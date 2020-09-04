@@ -1289,7 +1289,7 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@uiw/react-native-transport-location@link:../":
+"@uiw/react-native-transport-location@link:..":
   version "0.0.0"
   uid ""
 

@@ -1,4 +1,5 @@
 package com.example;
+// import com.uiwjs.react.transport.location;
 
 import android.app.Application;
 import android.content.Context;
@@ -45,6 +46,7 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    // TransportLocationUtil.setContext(this);
   }
 
   /**

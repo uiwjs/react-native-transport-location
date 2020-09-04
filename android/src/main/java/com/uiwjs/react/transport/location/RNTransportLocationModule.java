@@ -5,12 +5,13 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.alibaba.fastjson.JSON;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
-
-import com.alibaba.fastjson.JSON;
+import com.facebook.react.bridge.ReadableArray;
+import com.facebook.react.bridge.ReadableMap;
 import com.hdgq.locationlib.LocationOpenApi;
 import com.hdgq.locationlib.bcprov.AESOperator;
 import com.hdgq.locationlib.bcprov.SM2Utils;
@@ -36,12 +37,13 @@ import java.util.List;
 
 public class RNTransportLocationModule extends ReactContextBaseJavaModule {
 
-    private final ReactApplicationContext reactContext;
+     private final ReactApplicationContext reactContext;
 
     public RNTransportLocationModule(ReactApplicationContext reactContext) {
         super(reactContext);
-        this.reactContext = reactContext;
+         this.reactContext = reactContext;
     }
+    private Context context;
 
     @Override
     public String getName() {

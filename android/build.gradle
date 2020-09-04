@@ -73,7 +73,11 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
-    implementation fileTree(dir: "libs", include: ["*.aar"])
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.alibaba:fastjson:1.2.61'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.47'
 }
 
 def configureReactNativePom(def pom) {

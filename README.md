@@ -17,6 +17,12 @@ $ cd ios && pod install
   android:value="{你的高德key}" />
 ```
 
+## api
+
+- init
+- start
+- end
+
 ## 其它
 
 当前工程基于 [@brodybits/create-react-native-module](https://github.com/brodybits/create-react-native-module) 初始化。

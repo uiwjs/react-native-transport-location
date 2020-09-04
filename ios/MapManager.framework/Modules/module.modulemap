@@ -1,0 +1,6 @@
+framework module MapManager {
+  umbrella header "MapManager.h"
+
+  export *
+  module * { export * }
+}

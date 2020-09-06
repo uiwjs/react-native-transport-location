@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-native-transport-location",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "部网络货运信息交互系统位置信息上报",
   "main": "index.js",
   "files": [

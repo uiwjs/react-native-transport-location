@@ -1,4 +1,7 @@
 PODS:
+  - AMapFoundation (1.6.3)
+  - AMapLocation (2.6.5):
+    - AMapFoundation (~> 1.6.3)
   - boost-for-react-native (1.63.0)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
@@ -67,6 +70,9 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - GMObjC (3.0.0):
+    - GMOpenSSL
+  - GMOpenSSL (2.1.1)
   - MapManager (1.1.0)
   - OpenSSL-Universal (1.0.2.19):
     - OpenSSL-Universal/Static (= 1.0.2.19)
@@ -297,7 +303,7 @@ PODS:
     - React-Core (= 0.63.2)
     - React-cxxreact (= 0.63.2)
     - React-jsi (= 0.63.2)
-  - RNTransportLocation (1.0.0):
+  - RNTransportLocation (1.0.1):
     - MapManager
     - React
   - Yoga (1.14.0)
@@ -305,6 +311,7 @@ PODS:
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
+  - AMapLocation
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
@@ -329,6 +336,7 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (~> 0.41.1)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - GMObjC (= 3.0.0)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -356,6 +364,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AMapFoundation
+    - AMapLocation
     - boost-for-react-native
     - CocoaAsyncSocket
     - CocoaLibEvent
@@ -366,6 +376,8 @@ SPEC REPOS:
     - Flipper-PeerTalk
     - Flipper-RSocket
     - FlipperKit
+    - GMObjC
+    - GMOpenSSL
     - MapManager
     - OpenSSL-Universal
     - YogaKit
@@ -427,6 +439,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  AMapFoundation: 9ed923193b357ebb30a073e9fe255d3c24054d5a
+  AMapLocation: c566d448285cd502c1e313063d9e2460bd4d7100
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
@@ -442,6 +456,8 @@ SPEC CHECKSUMS:
   FlipperKit: bc68102cd4952a258a23c9c1b316c7bec1fecf83
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
+  GMObjC: 4ad23614c0279f864ae11703fd64ba51b9bc0739
+  GMOpenSSL: c042674e45e028fdef281d6bb9c4f68c71b83878
   MapManager: 32915f34f925b498b0bff47272ee609f435040fb
   OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
   RCTRequired: f13f25e7b12f925f1f6a6a8c69d929a03c0129fe
@@ -464,10 +480,10 @@ SPEC CHECKSUMS:
   React-RCTText: 1b6773e776e4b33f90468c20fe3b16ca3e224bb8
   React-RCTVibration: 4d2e726957f4087449739b595f107c0d4b6c2d2d
   ReactCommon: a0a1edbebcac5e91338371b72ffc66aa822792ce
-  RNTransportLocation: 07909dc6272859a417aadab07f9da55acc49cae7
+  RNTransportLocation: a4fbf0eea76840fea9d151f23c64ffd732d9ee6e
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 311cf87a4a33d759b7ec994ec3735e03d4ededbf
+PODFILE CHECKSUM: 10c83e4c2cb7f648da840be68f8301c5bc475179
 
 COCOAPODS: 1.9.3

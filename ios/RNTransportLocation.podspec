@@ -22,7 +22,10 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency "MapManager"
+  s.dependency 'AMapLocation', '2.6'
+  s.dependency 'GMObjC', '3.0.0'
+  # s.ios.vendored_frameworks = 'Frameworks/MapManager.framework'
+  s.vendored_frameworks = 'MapManager.framework'
   s.library = "c++", "z"
   # ...
   # s.dependency "..."

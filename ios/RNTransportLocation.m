@@ -1,5 +1,6 @@
 #import "RNTransportLocation.h"
-#import <MapManager.h>
+#import <MapManager/MapManager.h>
+
 
 @implementation RNTransportLocation
 
@@ -14,6 +15,10 @@ MapService *mapService;
     return self;
 }
 
++(BOOL)requiresMainQueueSetup
+{
+    return YES;
+}
 
 RCT_EXPORT_MODULE()
 

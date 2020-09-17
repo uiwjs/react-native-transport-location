@@ -9,19 +9,18 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import TransportLocation from '@uiw/react-native-transport-location';
 
 export default class App extends Component {
   state = {
     status: 'starting',
-    message: '--'
+    message: '--',
   };
 
-  componentDidMount() {
-    // console.log('3edsdsd,,,,')
-    // TransportLocation.init("com.zkdata.ptug.truck", "8a744876-b716-4f4f-af99-46975162fb8a", "3337057", "release")
-    // console.log('~9999999,,,')
+  async componentDidMount() {
+    const init = await TransportLocation.init("com.zkdata.ptug.truck", "8a744876-b716-4f4f-af99-46975162fb8a", "3337057", "release")
+    console.log('~9999999,,,', init);
 
     // TransportLocation.start("HT-HZ52008030000962", "0000", "320116", "421022")
     // TransportLocation.stop("HT-HZ52008030000962", "0000", "320116", "421022")

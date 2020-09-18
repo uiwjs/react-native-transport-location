@@ -22,10 +22,10 @@ export default class TransportLocation {
    */
   static start(shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode) {
     if (Platform.OS === 'android') {
-      return NativeModules.RNTransportLocation.stop(shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode);
+      return NativeModules.RNTransportLocation.start(shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode);
     }
     if (Platform.OS === 'ios') {
-      return NativeModules.RNTransportLocation.stop([shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode]);
+      return NativeModules.RNTransportLocation.start([{shippingNoteNumber:shippingNoteNumber, serialNumber:serialNumber, startCountrySubdivisionCode:startCountrySubdivisionCode, endCountrySubdivisionCode:endCountrySubdivisionCode}]);
     }
   }
   /**
@@ -40,7 +40,7 @@ export default class TransportLocation {
       return NativeModules.RNTransportLocation.stop(shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode);
     }
     if (Platform.OS === 'ios') {
-      return NativeModules.RNTransportLocation.stop([shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode]);
+      return NativeModules.RNTransportLocation.stop([{shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode}]);
     }
   }
 }

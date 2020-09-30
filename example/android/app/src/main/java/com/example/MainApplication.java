@@ -1,5 +1,4 @@
 package com.example;
-// import com.uiwjs.react.transport.location;
 
 import android.app.Application;
 import android.content.Context;
@@ -9,6 +8,7 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+// 加载 @uiw/react-native-transport-location
 import com.uiwjs.react.transport.location.TransportLocationUtil;
 
 import java.lang.reflect.InvocationTargetException;
@@ -48,6 +48,7 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    // 加载 @uiw/react-native-transport-location
     TransportLocationUtil.setContext(this);
   }
 

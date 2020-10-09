@@ -7,7 +7,12 @@
     "android/libs",
     "android/src",
     "android/build.gradle",
-    "ios",
+    "ios/RNTransportLocation.xcodeproj/project.pbxproj",
+    "ios/MapManager.framework",
+    "ios/RNTransportLocation.h",
+    "ios/RNTransportLocation.m",
+    "ios/RNTransportLocation.podspec",
+    "ios/RNTransportLocation.xcworkspace/contents.xcworkspacedata",
     "index.d.ts",
     "index.js",
     "README.md"

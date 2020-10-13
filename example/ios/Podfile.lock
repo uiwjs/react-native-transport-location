@@ -1,7 +1,7 @@
 PODS:
   - AMapFoundation (1.6.4)
-  - AMapLocation (2.6.0):
-    - AMapFoundation (~> 1.4)
+  - AMapLocation (2.6.7):
+    - AMapFoundation (~> 1.6.4)
   - boost-for-react-native (1.63.0)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
@@ -302,8 +302,11 @@ PODS:
     - React-Core (= 0.63.3)
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
-  - RNTransportLocation (1.0.2):
-    - AMapLocation (= 2.6)
+  - RNAMapGeolocation (1.5.3):
+    - AMapLocation (= 2.6.7)
+    - React
+  - RNTransportLocation (1.0.3):
+    - AMapLocation (= 2.6.7)
     - GMObjC (= 3.0.0)
     - React
   - Yoga (1.14.0)
@@ -357,6 +360,7 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNAMapGeolocation (from `../node_modules/@uiw/react-native-amap-geolocation/ios`)"
   - RNTransportLocation (from `../../ios`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -430,6 +434,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNAMapGeolocation:
+    :path: "../node_modules/@uiw/react-native-amap-geolocation/ios"
   RNTransportLocation:
     :path: "../../ios"
   Yoga:
@@ -437,7 +443,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AMapFoundation: 3638198dfa40be54648570c3520edefad288286b
-  AMapLocation: 55116a2c8956eab7550cbb56e989aa5cdcc424e3
+  AMapLocation: a46c30d9930d0f3a3bd21139d8f845d10ac3f01d
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
@@ -476,7 +482,8 @@ SPEC CHECKSUMS:
   React-RCTText: 65a6de06a7389098ce24340d1d3556015c38f746
   React-RCTVibration: 8e9fb25724a0805107fc1acc9075e26f814df454
   ReactCommon: 4167844018c9ed375cc01a843e9ee564399e53c3
-  RNTransportLocation: ab8d7a89039624be888bf45baef0d095a966f8e5
+  RNAMapGeolocation: 723da3d998ee2639f00fe0308ad050eec7162462
+  RNTransportLocation: 925f2bb70814000ced96db8316b20fe5e6b7d41e
   Yoga: 7d13633d129fd179e01b8953d38d47be90db185a
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

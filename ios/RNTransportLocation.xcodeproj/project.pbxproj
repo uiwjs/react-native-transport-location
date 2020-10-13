@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B95AF30625132C30009A57B3 /* libRNTransportLocation.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 134814201AA4EA6300B7C361 /* libRNTransportLocation.a */; };
+		B995C037253484400062F8F0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B995C036253484400062F8F0 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNTransportLocation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNTransportLocation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95AF3042513273B009A57B3 /* MapManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapManager.framework; sourceTree = "<group>"; };
+		B995C036253484400062F8F0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B995C037253484400062F8F0 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 		B95AF3032513273B009A57B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B995C036253484400062F8F0 /* Security.framework */,
 				B95AF3042513273B009A57B3 /* MapManager.framework */,
 			);
 			name = Frameworks;

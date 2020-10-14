@@ -9,6 +9,25 @@
 - 适用于 `react-native >= 0.60+` 低版本未测试。
 - 支持手机系统：iOS（苹果）、Android（安卓）。
 
+</details>
+
+<details>
+<summary>运行实例可能报错 EXC_BAD_ACCESS 错误，通过升级 Flipper 解决</summary>
+
+![image](https://user-images.githubusercontent.com/1680273/95947724-d4b0d380-0e21-11eb-838b-b1e4eddb5faf.png)
+
+```bash
+# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓解决运行报错问题↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+pod 'Flipper', '~> 0.62.0'
+# use_flipper!
+# post_install do |installer|
+#   flipper_post_install(installer)
+# end
+# ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+```
+
+</details>
+
 ## 安装依赖
 
 ```bash

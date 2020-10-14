@@ -8,7 +8,50 @@
 - ⚠️ 高德地图定位部分 API 需要真机调试和 `Access WiFi Information` 权限。
 - 适用于 `react-native >= 0.60+` 低版本未测试。
 - 支持手机系统：iOS（苹果）、Android（安卓）。
+- 需要设置允许 HTTP 请求访问
 - React Native 带的自带的包 [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) 与 [GMObjC](https://cocoapods.org/pods/GMObjC) 自带的 GMOpenSSL 冲突 [已解决 #1](https://github.com/uiwjs/react-native-transport-location/issues/4)
+
+<details>
+<summary>设置允许 HTTP 请求访问</summary>
+
+#### Android
+
+创建配置文件 `android/app/src/main/res/xml/network_security_config.xml` 内容如下：
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
+```
+
+修改配置 `android/app/src/main/AndroidManifest.xml`
+
+```diff
+<application
+  android:name=".MainApplication"
+  android:label="@string/app_name"
+  android:icon="@mipmap/ic_launcher"
+  android:roundIcon="@mipmap/ic_launcher_round"
+  android:allowBackup="false"
++  android:networkSecurityConfig="@xml/network_security_config"
+  android:theme="@style/AppTheme">
+</application>
+```
+
+#### iOS
+
+修改 `ios/<应用名称>/Info.plist` 配置
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+  <key>NSAllowsArbitraryLoads</key>
+  <true/>
+</dict>
+```
+
+</details>
 
 <details>
 <summary> iOS 端需要开启始终定位</summary>

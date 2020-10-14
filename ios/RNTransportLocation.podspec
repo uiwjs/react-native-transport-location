@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency 'AMapLocation', '2.6.7'
+  s.dependency 'AMapLocation'
   s.dependency 'GMObjC', '3.0.0'
   # s.dependency 'OpenSSL-Universal', '1.0.2.20'
   # s.frameworks = 'Security'

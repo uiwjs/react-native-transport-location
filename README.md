@@ -6,6 +6,7 @@
 ## 注意事项
 
 - ⚠️ 高德地图定位部分 API 需要真机调试
+- 需要集成高德地图，可使用 [`@uiw/react-native-amap-geolocation`](http://npmjs.com/@uiw/react-native-amap-geolocation) 代替，使用方法[参考实例](https://github.com/uiwjs/react-native-transport-location/blob/ffcd28c47838e516513a5a0c1fb5cb263be4b753/example/App.js#L19-L40)
 - 适用于 `react-native >= 0.60+` 低版本未测试。
 - 支持手机系统：iOS（苹果）、Android（安卓）。
 
@@ -36,12 +37,12 @@ yarn add @uiw/react-native-transport-location
 $ cd ios && pod install
 ```
 
+如果使用 [`@uiw/react-native-amap-geolocation`](http://npmjs.com/@uiw/react-native-amap-geolocation) 可能不需要如下设置，源码中集成。
+
 `AndroidManifest.xml`
 
 ```xml
-<meta-data
-  android:name="com.amap.api.v2.apikey"
-  android:value="{你的高德key}" />
+<meta-data android:name="com.amap.api.v2.apikey" android:value="{你的高德key}" />
 ```
 
 ## api

@@ -27,23 +27,28 @@ export default class App extends Component {
     if (apiKey) {
       AMapGeolocation.setApiKey(apiKey);
     }
-    // iOS 指定所需的精度级别
-    // AMapGeolocation.setDesiredAccuracy(3);
-    // Android 指定所需的精度级别，可选设置，默认 高精度定位模式
-    // AMapGeolocation.setLocationMode(1);
-    // 定位是否返回逆地理信息
-    // AMapGeolocation.setLocatingWithReGeocode(true);
-    // 当设备可以正常联网时，还可以返回该定位点的对应的中国境内位置信息（包括：省、市、区/县以及详细地址）。
-    AMapGeolocation.addLocationListener((location) => {
-      console.log('返回定位信息', location);
-    });
-    AMapGeolocation.start();
 
-    const init = await TransportLocation.init("com.zkdata.ptug.truck", "8a744876-b716-4f4f-af99-46975162fb8a", "3337057", "release")
-    console.log('~9999999,,,', init);
-    TransportLocation.start("HT-HZ52008030000962", "0000", "320116", "421022")
-    // TransportLocation.stop("HT-HZ52008030000962", "0000", "320116", "421022")
-    // console.log('~sdsd55555,,,')
+    try {
+      // iOS 指定所需的精度级别
+      // AMapGeolocation.setDesiredAccuracy(3);
+      // Android 指定所需的精度级别，可选设置，默认 高精度定位模式
+      // AMapGeolocation.setLocationMode(1);
+      // 定位是否返回逆地理信息
+      // AMapGeolocation.setLocatingWithReGeocode(true);
+      // 当设备可以正常联网时，还可以返回该定位点的对应的中国境内位置信息（包括：省、市、区/县以及详细地址）。
+      AMapGeolocation.addLocationListener((location) => {
+        console.log('返回定位信息', location);
+      });
+      AMapGeolocation.start();
+
+      const init = await TransportLocation.init("com.zkdata.ptug.truck", "8a744876-b716-4f4f-af99-46975162fb8a", "3337057", "release")
+      console.log('~9999999,,,', init);
+      TransportLocation.start("HT-HZ52008030000962", "0000", "320116", "421022")
+      // TransportLocation.stop("HT-HZ52008030000962", "0000", "320116", "421022")
+      // console.log('~sdsd55555,,,')
+    } catch (error) {
+        console.log('--->', error)
+    }
   }
   render() {
     // console.log('~~~~:::4441')

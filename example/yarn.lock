@@ -1296,13 +1296,9 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@uiw/react-native-amap-geolocation@1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@uiw/react-native-amap-geolocation/-/react-native-amap-geolocation-1.5.3.tgz#aaf7db2e39557d39ed5e97aa547eaae305a963c3"
-  integrity sha512-lRZRgGh+s/W6VlYbYAWOJOzlHLdGzyDvzxRR4qntZzaVeuao7SxfYpH6i3iH6ggeqJ1vD4XbK9LvJ35qfX0bGQ==
-
 "@uiw/react-native-transport-location@link:..":
-  version "1.0.4"
+  version "0.0.0"
+  uid ""
 
 abab@^2.0.0:
   version "2.0.5"

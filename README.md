@@ -5,25 +5,29 @@
 
 ## 注意事项
 
-- 需要集成高德地图，可使用 [`@uiw/react-native-amap-geolocation`](http://npmjs.com/@uiw/react-native-amap-geolocation) 代替，使用方法[参考实例](https://github.com/uiwjs/react-native-transport-location/blob/ffcd28c47838e516513a5a0c1fb5cb263be4b753/example/App.js#L19-L40)
 - ⚠️ 高德地图定位部分 API 需要真机调试和 `Access WiFi Information` 权限。
 - 适用于 `react-native >= 0.60+` 低版本未测试。
 - 支持手机系统：iOS（苹果）、Android（安卓）。
-- React Native 带的自带的包 [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) 与 [GMObjC](https://cocoapods.org/pods/GMObjC) 自带的 GMOpenSSL 冲突 [#1](https://github.com/uiwjs/react-native-transport-location/issues/4)
+- React Native 带的自带的包 [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) 与 [GMObjC](https://cocoapods.org/pods/GMObjC) 自带的 GMOpenSSL 冲突 [已解决 #1](https://github.com/uiwjs/react-native-transport-location/issues/4)
 
 <details>
-<summary>运行实例可能报错 EXC_BAD_ACCESS 错误，通过升级 <a href="https://github.com/uiwjs/react-native-transport-location/blob/f66d5be75d868a721619feb55d9a0b7ce8f64a9d/example/ios/Podfile#L20-L26">Flipper</a> 解决</summary>
+<summary>iOS 端需要开启始终定位</summary>
 
-![image](https://user-images.githubusercontent.com/1680273/95947724-d4b0d380-0e21-11eb-838b-b1e4eddb5faf.png)
+`example/ios/<项目名称>/Info.plist`
 
-```bash
-# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓解决运行报错问题↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-pod 'Flipper', '~> 0.62.0'
-# use_flipper!
-# post_install do |installer|
-#   flipper_post_install(installer)
-# end
-# ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+iOS 11 版本：
+
+`NSLocationAlwaysAndWhenInUseUsageDescription` 申请Always权限，以便应用在前台和后台（suspend 或 terminated）都可以获取到更新的位置数据（`NSLocationWhenInUseUsageDescription` 也必须有）。
+
+⚠️ 注意：如果需要同时支持在iOS8-iOS10和iOS11系统上后台定位，建议在plist文件中同时添加 `NSLocationWhenInUseUsageDescription`、`NSLocationAlwaysUsageDescription`和`NSLocationAlwaysAndWhenInUseUsageDescription`权限申请。
+
+```xml
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>使用期间定位，以便获取位置信息</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>持续定位，以便获取行驶路线</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>持续定位，以便获取行驶路线</string>
 ```
 
 </details>

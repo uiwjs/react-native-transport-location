@@ -5,12 +5,6 @@
 
 ## 注意事项
 
-- ⚠️ 高德地图定位部分 API 需要真机调试和 `Access WiFi Information` 权限。
-- 适用于 `react-native >= 0.60+` 低版本未测试。
-- 支持手机系统：iOS（苹果）、Android（安卓）。
-- 需要设置允许 HTTP 请求访问
-- React Native 带的自带的包 [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) 与 [GMObjC](https://cocoapods.org/pods/GMObjC) 自带的 GMOpenSSL 冲突 [已解决 #1](https://github.com/uiwjs/react-native-transport-location/issues/4)
-
 <details>
 <summary>设置允许 HTTP 请求访问</summary>
 
@@ -74,6 +68,12 @@ iOS 11 版本：
 ```
 
 </details>
+
+- ⚠️ 高德地图定位部分 API 需要真机调试和 `Access WiFi Information` 权限。
+- 适用于 `react-native >= 0.60+` 低版本未测试。
+- 支持手机系统：iOS（苹果）、Android（安卓）。
+- 需要设置允许 HTTP 请求访问
+- React Native 带的自带的包 [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) 与 [GMObjC](https://cocoapods.org/pods/GMObjC) 自带的 GMOpenSSL 冲突 [已解决 #1](https://github.com/uiwjs/react-native-transport-location/issues/4)
 
 ## 安装依赖
 

@@ -11,7 +11,7 @@
 - React Native 带的自带的包 [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) 与 [GMObjC](https://cocoapods.org/pods/GMObjC) 自带的 GMOpenSSL 冲突 [已解决 #1](https://github.com/uiwjs/react-native-transport-location/issues/4)
 
 <details>
-<summary>iOS 端需要开启始终定位</summary>
+<summary> iOS 端需要开启始终定位</summary>
 
 `example/ios/<项目名称>/Info.plist`
 

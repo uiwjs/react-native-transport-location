@@ -40,8 +40,6 @@ yarn add @uiw/react-native-transport-location
 $ cd ios && pod install
 ```
 
-如果使用 [`@uiw/react-native-amap-geolocation`](http://npmjs.com/@uiw/react-native-amap-geolocation) 可能不需要如下设置，源码中集成。
-
 `AndroidManifest.xml`
 
 ```xml

@@ -11,8 +11,6 @@
 - 支持手机系统：iOS（苹果）、Android（安卓）。
 - React Native 带的自带的包 [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) 与 [GMObjC](https://cocoapods.org/pods/GMObjC) 自带的 GMOpenSSL 冲突 [#1](https://github.com/uiwjs/react-native-transport-location/issues/4)
 
-</details>
-
 <details>
 <summary>运行实例可能报错 EXC_BAD_ACCESS 错误，通过升级 <a href="https://github.com/uiwjs/react-native-transport-location/blob/f66d5be75d868a721619feb55d9a0b7ce8f64a9d/example/ios/Podfile#L20-L26">Flipper</a> 解决</summary>
 

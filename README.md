@@ -14,7 +14,7 @@
 </details>
 
 <details>
-<summary>运行实例可能报错 EXC_BAD_ACCESS 错误，通过升级 [Flipper](https://github.com/uiwjs/react-native-transport-location/blob/c604fbe51014426f01e2623c8717ad16b44dbe15/example/ios/Podfile#L21-L26) 解决</summary>
+<summary>运行实例可能报错 EXC_BAD_ACCESS 错误，通过升级 <a href="https://github.com/uiwjs/react-native-transport-location/blob/c604fbe51014426f01e2623c8717ad16b44dbe15/example/ios/Podfile#L21-L26">Flipper</a> 解决</summary>
 
 ![image](https://user-images.githubusercontent.com/1680273/95947724-d4b0d380-0e21-11eb-838b-b1e4eddb5faf.png)
 

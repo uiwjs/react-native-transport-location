@@ -26,7 +26,11 @@ RCT_EXPORT_METHOD(init:(NSString *)appId
                   reject:(RCTPromiseRejectBlock)reject)
 {
    [_mapService openServiceWithAppId:appId appSecurity:appSecurity enterpriseSenderCode:enterpriseSenderCode environment:environment listener:^(id  model, NSError * error) {
-       resolve(model);
+       if (error) {
+           reject(@"-14001", error.localizedDescription, error);
+       } else {
+           resolve(model);
+       }
    }];
 }
 
@@ -35,7 +39,11 @@ RCT_EXPORT_METHOD(start: (NSArray *)shippingNoteInfos
                   reject:(RCTPromiseRejectBlock)reject)
 {
    [_mapService startLocationWithShippingNoteInfos:shippingNoteInfos listener:^(id  _Nonnull model, NSError * _Nonnull error) {
-       resolve(model);
+       if (error) {
+           reject(@"-14002", error.localizedDescription, error);
+       } else {
+           resolve(model);
+       }
    }];
 }
 
@@ -44,7 +52,11 @@ RCT_EXPORT_METHOD(stop :(NSArray *)shippingNoteInfos
                 reject:(RCTPromiseRejectBlock)reject)
 {
    [_mapService stopLocationWithShippingNoteInfos:shippingNoteInfos listener:^(id  _Nonnull model, NSError * _Nonnull error) {
-       resolve(model);
+       if (error) {
+           reject(@"-14003", error.localizedDescription, error);
+       } else {
+           resolve(model);
+       }
    }];
 }
 

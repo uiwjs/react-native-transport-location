@@ -39,11 +39,11 @@ RCT_EXPORT_METHOD(start: (NSArray *)shippingNoteInfos
                   reject:(RCTPromiseRejectBlock)reject)
 {
    [_mapService startLocationWithShippingNoteInfos:shippingNoteInfos listener:^(id  _Nonnull model, NSError * _Nonnull error) {
-       if (error) {
-           reject(@"-14002", error.localizedDescription, error);
-       } else {
-           resolve(model);
-       }
+        if (error) {
+            reject(@"-14002", error.localizedDescription, error);
+        } else {
+            resolve(model);
+        }
    }];
 }
 

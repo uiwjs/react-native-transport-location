@@ -23,11 +23,9 @@ Pod::Spec.new do |s|
 
   s.dependency "React"
   s.dependency 'AMapLocation'
-  s.dependency 'GMObjC', '3.0.0'
-  # s.dependency 'OpenSSL-Universal', '1.0.2.20'
-  # s.frameworks = 'Security'
-  # s.ios.vendored_frameworks = 'Frameworks/MapManager.framework'
   s.vendored_frameworks = 'MapManager.framework'
+  s.vendored_frameworks = 'GMObjC.framework'
+  # s.dependency 'GMObjC', '3.0.0'
   s.library = "c++", "z"
   # ...
   # s.dependency "..."

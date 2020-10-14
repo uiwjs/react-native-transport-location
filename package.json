@@ -8,6 +8,7 @@
     "android/src",
     "android/build.gradle",
     "ios/RNTransportLocation.xcodeproj/project.pbxproj",
+    "ios/GMObjC.framework",
     "ios/MapManager.framework",
     "ios/RNTransportLocation.h",
     "ios/RNTransportLocation.m",

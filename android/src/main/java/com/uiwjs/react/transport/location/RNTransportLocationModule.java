@@ -14,6 +14,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.common.ArrayUtils;
 import com.hdgq.locationlib.LocationOpenApi;
 import com.hdgq.locationlib.bcprov.AESOperator;
 import com.hdgq.locationlib.bcprov.SM2Utils;
@@ -35,6 +36,7 @@ import com.hdgq.locationlib.util.LocationUtils;
 import com.lzy.okgo.model.Response;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class RNTransportLocationModule extends ReactContextBaseJavaModule {
@@ -108,14 +110,11 @@ public class RNTransportLocationModule extends ReactContextBaseJavaModule {
      * 启用服务。context 必须为 activity。
      */
     @ReactMethod
-    public void start(String shippingNoteNumber,String serialNumber,String startCountrySubdivisionCode,String endCountrySubdivisionCode, final Promise promise) {
-        JavaOnlyMap param = new JavaOnlyMap();
-        param.putString("shippingNoteNumber", shippingNoteNumber);
-        param.putString("serialNumber", serialNumber);
-        param.putString("startCountrySubdivisionCode",startCountrySubdivisionCode);
-        param.putString("endCountrySubdivisionCode", endCountrySubdivisionCode);
-        JavaOnlyArray javaOnlyArray = JavaOnlyArray.of(param);
-        LocationOpenApi.start(this.context, convert(javaOnlyArray), new OnResultListener() {
+    public void start(ReadableArray array, final Promise promise) {
+
+        ShippingNoteInfo[] shippingNoteInfosArray = getShippingNoteInfos(array);
+
+        LocationOpenApi.start(this.context, shippingNoteInfosArray, new OnResultListener() {
             @Override
             public void onSuccess() {
                 promise.resolve("success");
@@ -131,14 +130,9 @@ public class RNTransportLocationModule extends ReactContextBaseJavaModule {
      * 停止服务。context 必须为 activity。
      */
     @ReactMethod
-    public void stop(String shippingNoteNumber,String serialNumber,String startCountrySubdivisionCode,String endCountrySubdivisionCode, final Promise promise) {
-        JavaOnlyMap param = new JavaOnlyMap();
-        param.putString("shippingNoteNumber", shippingNoteNumber);
-        param.putString("serialNumber", serialNumber);
-        param.putString("startCountrySubdivisionCode",startCountrySubdivisionCode);
-        param.putString("endCountrySubdivisionCode", endCountrySubdivisionCode);
-        JavaOnlyArray javaOnlyArray = JavaOnlyArray.of(param);
-        LocationOpenApi.stop(this.context, convert(javaOnlyArray), new OnResultListener() {
+    public void stop(ReadableArray array, final Promise promise) {
+        ShippingNoteInfo[] shippingNoteInfosArray = getShippingNoteInfos(array);
+        LocationOpenApi.stop(this.context,shippingNoteInfosArray, new OnResultListener() {
             @Override
             public void onSuccess() {
                 promise.resolve("success");
@@ -151,20 +145,22 @@ public class RNTransportLocationModule extends ReactContextBaseJavaModule {
         });
     }
 
-    private ShippingNoteInfo[] convert(ReadableArray array) {
-        if (array != null && array.size() != 0) {
-            List<ShippingNoteInfo> list = new ArrayList<>();
-            for (int i = 0; i < array.size(); i++) {
-                ReadableMap map = array.getMap(i);
-                ShippingNoteInfo shippingNoteInfo = new ShippingNoteInfo();
-                shippingNoteInfo.setEndCountrySubdivisionCode(map.getString("endCountrySubdivisionCode"));
-                shippingNoteInfo.setStartCountrySubdivisionCode(map.getString("startCountrySubdivisionCode"));
-                shippingNoteInfo.setShippingNoteNumber(map.getString("shippingNoteNumber"));
-                shippingNoteInfo.setSerialNumber(map.getString("serialNumber"));
-                list.add(shippingNoteInfo);
-            }
-            return list.toArray(new ShippingNoteInfo[list.size()]);
+    private ShippingNoteInfo[] getShippingNoteInfos(ReadableArray array) {
+        List<Object> list = array.toArrayList();
+        ShippingNoteInfo[] shippingNoteInfosArray= new ShippingNoteInfo[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            HashMap<String,String> hashMap = (HashMap<String,String>)list.get(i);
+            String shippingNoteNumber = hashMap.get("shippingNoteNumber");
+            String serialNumber = hashMap.get("serialNumber");
+            String startCountrySubdivisionCode = hashMap.get("startCountrySubdivisionCode");
+            String endCountrySubdivisionCode = hashMap.get("endCountrySubdivisionCode");
+            ShippingNoteInfo shippingNoteInfo =  new ShippingNoteInfo();
+            shippingNoteInfo.setShippingNoteNumber(shippingNoteNumber);
+            shippingNoteInfo.setSerialNumber(serialNumber);
+            shippingNoteInfo.setStartCountrySubdivisionCode(startCountrySubdivisionCode);
+            shippingNoteInfo.setEndCountrySubdivisionCode(endCountrySubdivisionCode);
+            shippingNoteInfosArray[i] = shippingNoteInfo;
         }
-        return null;
+        return shippingNoteInfosArray;
     }
 }

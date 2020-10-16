@@ -31,6 +31,6 @@ export default class TransportLocation {
    * @param {String} endCountrySubdivisionCode 终点行政区划代码
    */
   static stop(shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode) {
-    return NativeModules.RNTransportLocation.stop([{shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode}]);
+    return NativeModules.RNTransportLocation.stop([{shippingNoteNumber:shippingNoteNumber, serialNumber:serialNumber, startCountrySubdivisionCode:startCountrySubdivisionCode, endCountrySubdivisionCode:endCountrySubdivisionCode}]);
   }
 }

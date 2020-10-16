@@ -21,12 +21,7 @@ export default class TransportLocation {
    * 
    */
   static start(shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode) {
-    if (Platform.OS === 'android') {
-      return NativeModules.RNTransportLocation.start(shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode);
-    }
-    if (Platform.OS === 'ios') {
-      return NativeModules.RNTransportLocation.start([{shippingNoteNumber:shippingNoteNumber, serialNumber:serialNumber, startCountrySubdivisionCode:startCountrySubdivisionCode, endCountrySubdivisionCode:endCountrySubdivisionCode}]);
-    }
+    return NativeModules.RNTransportLocation.start([{shippingNoteNumber:shippingNoteNumber, serialNumber:serialNumber, startCountrySubdivisionCode:startCountrySubdivisionCode, endCountrySubdivisionCode:endCountrySubdivisionCode}]);
   }
   /**
    * 结束定位
@@ -36,11 +31,6 @@ export default class TransportLocation {
    * @param {String} endCountrySubdivisionCode 终点行政区划代码
    */
   static stop(shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode) {
-    if (Platform.OS === 'android') {
-      return NativeModules.RNTransportLocation.stop(shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode);
-    }
-    if (Platform.OS === 'ios') {
-      return NativeModules.RNTransportLocation.stop([{shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode}]);
-    }
+    return NativeModules.RNTransportLocation.stop([{shippingNoteNumber, serialNumber, startCountrySubdivisionCode, endCountrySubdivisionCode}]);
   }
 }

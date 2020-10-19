@@ -69,6 +69,30 @@ iOS 11 版本：
 
 </details>
 
+<details>
+<summary> iOS: bitcode bundle could not be generated because，编译报错不支持 bitcode</summary>
+
+### 不支持 bitcode，什么是bitcode
+
+bitcode 简单说就是编程语言与计算机可以直接执行的机器语言之间的中间码。苹果为了减少包的大小，打包时会将项目编译成 bitcode，上传给 App Store，用户下载时，bitcode 可以根据机型版本，生成不同的包去适配。大概就是这么个意思，具体内容[请戳这里](http://io.diveinedu.com/2016/01/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3iOS%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84BitCode%E5%8A%9F%E8%83%BD.html)。
+
+### 解决方案
+
+Xcode7 开始，新建项目默认就打开了 `bitcode` 设置。而且大部分开发者都被这个突如其来的 `bitcode` 功能给坑过导致项目编译失败，这些因为 `bitcode` 而编译失败的的项目都有一个共同点，就是链接了第三方库或者框架，而这些框架或者库不支持 `bitcode` ，从而导致项目编译不成功。
+解决方案有两种(目前只有第二种解决方案)：
+
+1. 联系第三方框架 [`MapManager.framework`](ios/MapManager.framework) 的提供者，让他们支持 `bitcode`，这个执行起来有难度。
+2. 关闭 `bitcode` 功能；在 xcode 里把 `TARGETS` -> `Build Setting` -> `Build Options` -> `Enable Bitcode` 设置为 `NO`;
+
+### 报错信息
+
+```bash
+ld: bitcode bundle could not be generated because '******/react-native-transport-location/ios/MapManager.framework/MapManager(MapService.o)' was built without full bitcode. All object files and libraries for bitcode must be generated from Xcode Archive or Install build for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+```
+
+</details>
+
 - ⚠️ 高德地图定位部分 API 需要真机调试和 `Access WiFi Information` 权限。
 - 适用于 `react-native >= 0.60+` 低版本未测试。
 - 支持手机系统：iOS（苹果）、Android（安卓）。

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B95AF30625132C30009A57B3 /* libRNTransportLocation.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 134814201AA4EA6300B7C361 /* libRNTransportLocation.a */; };
+		B967176E253B2701001CDBF7 /* GMObjC.framework in Sources */ = {isa = PBXBuildFile; fileRef = B9671728253B1652001CDBF7 /* GMObjC.framework */; };
 		B995C037253484400062F8F0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B995C036253484400062F8F0 /* Security.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNTransportLocation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNTransportLocation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95AF3042513273B009A57B3 /* MapManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapManager.framework; sourceTree = "<group>"; };
+		B9671728253B1652001CDBF7 /* GMObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GMObjC.framework; sourceTree = "<group>"; };
 		B995C036253484400062F8F0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,7 @@
 		B95AF3032513273B009A57B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9671728253B1652001CDBF7 /* GMObjC.framework */,
 				B995C036253484400062F8F0 /* Security.framework */,
 				B95AF3042513273B009A57B3 /* MapManager.framework */,
 			);
@@ -124,6 +127,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B967176E253B2701001CDBF7 /* GMObjC.framework in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +248,10 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -265,7 +272,10 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -56,6 +56,16 @@ GMObjC 里面用到的 `OpenSSL` 配置 `armv7` 有问题，`GMObjC.framework` �
 
 设置 `Xcode` -> `Targets` -> `项目名称` -> `Build Settings` -> `Architectures` 值为 `arm64`
 
+- 2019 A13芯片arm64e：iphone11、iphone11 Pro
+- 2018 A12芯片arm64e：iphone XS、iphone XS Max、iphoneXR
+- 2017 A11芯片arm64：iPhone 8、iPhone 8 Plus、and iPhone X
+- 2016 A10芯片arm64：iPhone 7、7 Plus、iPad (2018)
+- 2015 A9芯片arm64：iPhone 6S、6S Plus
+- 2014 A8芯片arm64：iPhone 6、iPhone 6 Plus
+- 2013 A7芯片arm64：iPhone 5S
+- armv7s：iPhone5、iPhone5C、iPad4(iPad with Retina Display)
+- armv7：iPhone4、iPhone4S、iPad、iPad2、iPad3(The New iPad)、iPad mini、iPod Touch
+
 </details>
 
 <details>

@@ -6,17 +6,6 @@
 ## 注意事项
 
 <details>
-<summary> ⚠️ GMObjC 只支持 ARM64 的架构</summary>
-
-GMObjC 里面用到的 `OpenSSL` 配置 `armv7` 有问题，`GMObjC.framework` 动态包也是只支持 ARM64
-
-![](https://user-images.githubusercontent.com/1680273/96695165-ea8f3d00-13bb-11eb-84bf-a647c69d12c9.jpg)
-
-设置 `Xcode` -> `Targets` -> `项目名称` -> `Build Settings` -> `Architectures` 值为 `arm64`
-
-</details>
-
-<details>
 <summary>设置允许 HTTP 请求访问</summary>
 
 #### Android
@@ -55,6 +44,17 @@ GMObjC 里面用到的 `OpenSSL` 配置 `armv7` 有问题，`GMObjC.framework` �
   <true/>
 </dict>
 ```
+
+</details>
+
+<details>
+<summary> ⚠️ GMObjC 只支持 ARM64 的架构</summary>
+
+GMObjC 里面用到的 `OpenSSL` 配置 `armv7` 有问题，`GMObjC.framework` 动态包也是只支持 ARM64
+
+![](https://user-images.githubusercontent.com/1680273/96695165-ea8f3d00-13bb-11eb-84bf-a647c69d12c9.jpg)
+
+设置 `Xcode` -> `Targets` -> `项目名称` -> `Build Settings` -> `Architectures` 值为 `arm64`
 
 </details>
 

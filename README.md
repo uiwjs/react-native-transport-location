@@ -5,9 +5,8 @@
 
 ## 注意事项
 
-
 <details>
-<summary>⚠️ GMObjC 只支持 ARM64 的架构</summary>
+<summary> ⚠️ GMObjC 只支持 ARM64 的架构</summary>
 
 GMObjC 里面用到的 `OpenSSL` 配置 `armv7` 有问题，`GMObjC.framework` 动态包也是只支持 ARM64
 
@@ -105,11 +104,11 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 </details>
 
-- ⚠️ 高德地图定位部分 API 需要真机调试和 `Access WiFi Information` 权限。
-- 适用于 `react-native >= 0.60+` 低版本未测试。
-- 支持手机系统：iOS（苹果）、Android（安卓）。
-- 需要设置允许 HTTP 请求访问
-- React Native 带的自带的包 [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) 与 [GMObjC](https://cocoapods.org/pods/GMObjC) 自带的 GMOpenSSL 冲突 [已解决 #1](https://github.com/uiwjs/react-native-transport-location/issues/4)
+> - ⚠️ 高德地图定位部分 API 需要真机调试和 `Access WiFi Information` 权限。
+> - 适用于 `react-native` `>= 0.60+` 低版本未测试。
+> - 支持手机系统：iOS（苹果）、Android（安卓）。
+> - 需要设置允许 HTTP 请求访问
+> - React Native 带的自带的包 [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) 与 [GMObjC](https://cocoapods.org/pods/GMObjC) 自带的 GMOpenSSL 冲突 [已解决 #1](https://github.com/uiwjs/react-native-transport-location/issues/4)
 
 ## 安装依赖
 

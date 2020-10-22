@@ -77,6 +77,11 @@ GMObjC 里面用到的 `OpenSSL` 配置 `armv7` 有问题，`GMObjC.framework` �
 - armv7s：iPhone5、iPhone5C、iPad4(iPad with Retina Display)
 - armv7：iPhone4、iPhone4S、iPad、iPad2、iPad3(The New iPad)、iPad mini、iPod Touch
 
+```bash
+lipo -info GMObjC.framework/GMObjC
+# Non-fat file: GMObjC.framework/GMObjC is architecture: arm64
+```
+
 </details>
 
 <details>

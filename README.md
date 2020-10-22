@@ -48,7 +48,18 @@
 </details>
 
 <details>
-<summary> ⚠️ GMObjC 只支持 ARM64 的架构</summary>
+<summary>Android 配置高德地图 key</summary>
+
+`example/android/app/src/main/AndroidManifest.xml`
+
+```xml
+<meta-data android:name="com.amap.api.v2.apikey" android:value="{你的高德key}" />
+```
+
+</details>
+
+<details>
+<summary> iOS: ⚠️ GMObjC 只支持 ARM64 的架构</summary>
 
 GMObjC 里面用到的 `OpenSSL` 配置 `armv7` 有问题，`GMObjC.framework` 动态包也是只支持 ARM64
 
@@ -69,7 +80,7 @@ GMObjC 里面用到的 `OpenSSL` 配置 `armv7` 有问题，`GMObjC.framework` �
 </details>
 
 <details>
-<summary> iOS 端需要开启始终定位</summary>
+<summary> iOS: 端需要开启始终定位</summary>
 
 `example/ios/<项目名称>/Info.plist`
 
@@ -126,12 +137,6 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 yarn add @uiw/react-native-transport-location
 # react-native version >= 0.60+
 $ cd ios && pod install
-```
-
-`AndroidManifest.xml`
-
-```xml
-<meta-data android:name="com.amap.api.v2.apikey" android:value="{你的高德key}" />
 ```
 
 ## api

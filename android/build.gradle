@@ -76,7 +76,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
 
     implementation 'com.lzy.net:okgo:3.0.4'
-    implementation 'com.alibaba:fastjson:1.2.61'
+    implementation 'com.alibaba:fastjson:1.2.83'
     implementation 'org.bouncycastle:bcprov-jdk15on:1.47'
 }
 

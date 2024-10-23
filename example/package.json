@@ -12,7 +12,7 @@
   "dependencies": {
     "@uiw/react-native-transport-location": "link:../",
     "react": "16.13.1",
-    "react-native": "0.63.3"
+    "react-native": "0.76.0"
   },
   "devDependencies": {
     "@babel/core": "7.11.6",
